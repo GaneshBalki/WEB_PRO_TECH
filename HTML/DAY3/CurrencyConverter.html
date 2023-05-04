@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script>
+            function f1()
+            {
+                let n1=parseInt(document.getElementById("i1").value);
+                
+                // console.log(n1,n2)
+                
+                let cur1=parseInt(document.getElementById("s2").value); 
+                let cur2=parseInt(document.getElementById("s3").value); 
+                if (cur1==1 && cur2==2) {
+                    //rupee to dollar
+                    let val=n1/81.68
+                    document.getElementById("m1").innerText=val
+                    
+                }
+                else if(cur1==1 && cur2==3)
+                {
+                    //rupee to euro
+                    let val=n1/90.03
+                    document.getElementById("m1").innerText=val
+                }
+                else if(cur1==2 && cur2==3)
+                {
+                    //dollar to euro
+                    let val=n1/1.10
+                    document.getElementById("m1").innerText=val
+                }
+                
+                else if(cur1==2 && cur2==1) {
+                    //dollar to rupee
+                    let val=n1*81.68
+                    document.getElementById("m1").innerText=val
+                    
+                }
+                else if(cur1==3 && cur2==1)
+                {
+                    //euro to rupee
+                    let val=n1*90.03
+                    document.getElementById("m1").innerText=val
+                }
+                else if(cur1==3 && cur2==2)
+                {   //euro to dollar
+                    let val=n1*0.91
+                    document.getElementById("m1").innerText=val
+                }
+                else if(cur1==cur2)
+                {
+                    document.getElementById("m1").innerText=n1
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+
+        
+        <select id="s2">
+            <option>select</option>
+            <option value="1">&#8377</option>
+            <option value="2">$</option>
+            <option value="3">&#x20AC</option>
+            
+           </select>
+
+        <select id="s3">
+            <option>select</option>
+            <option value="1">&#8377</option>
+            <option value="2">$</option>
+            <option value="3">&#x20AC</option>
+            
+           </select><br><br><br>
+        <input type="number" value="0" id="i1"/>
+
+        
+        <p id="m1"></p><br><br>
+   
+            <button onclick="f1()">ok</button>
+           
+    </body>
+</html>

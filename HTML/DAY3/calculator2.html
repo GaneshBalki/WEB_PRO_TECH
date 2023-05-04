@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script>
+            function f1()
+            {
+                let n1=parseInt(document.getElementById("i1").value);
+                let n2=parseInt(document.getElementById("i2").value);
+                // console.log(n1,n2)
+                switch(document.getElementById("s1").value)
+                {
+                    case "+":
+                        let r=n1+n2
+                        document.getElementById("p1").innerText=`${r}`
+                        break;
+                    case "-":
+                        let sub=n1-n2
+                        document.getElementById("p1").innerText=`${sub}`
+                        break;
+                    case "*":
+                        let multi=n1*n2
+                        document.getElementById("p1").innerText=`${multi}`
+                        break;
+                    case "/":
+                        let div=n1/n2
+                        document.getElementById("p1").innerText=`${div}`
+                        break;
+                    case "%":
+                        let mod=n1%n2
+                        document.getElementById("p1").innerText=`${mod}`
+                        break;
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+           <input type="number" value="0" id="i1"/><br><br>
+           <input type="number" value="0" id="i2"/><br><br>
+
+           <select id="s1" onchange="f1()">
+            <option>select</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+           
+           </select><br><br>
+           <span id="p1"></span>
+    </body>
+</html>
