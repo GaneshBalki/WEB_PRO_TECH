@@ -1,0 +1,37 @@
+<html>
+    <head>
+          <script>
+            function f1()
+            {
+                let element=document.getElementById("i1")
+                let e=element.value
+                document.getElementById("p1").innerHTML=e.toUpperCase()
+
+            }
+            function f2()
+            {
+                let element=document.getElementById("i1")
+                let e=element.value
+                document.getElementById("p1").innerHTML=e.toLowerCase()
+
+            }
+            function f3()
+            {
+                let element=document.getElementById("i1")
+                let ele=element.value
+                let e=ele.substr(0,1).toUpperCase().concat(ele.substr(1).toLowerCase())
+                document.getElementById("p1").innerText=e
+            }
+            </script>
+
+    </head>
+    <body>
+
+        <input type="text" value="Enter Name" id="i1"/>
+        <p id="p1"></p>
+        <button onclick="f1()">UpperCase</button>
+        <button onclick="f2()">LowerCase</button>
+        <button onclick="f3()">TitleCase</button>
+
+    </body>
+</html>

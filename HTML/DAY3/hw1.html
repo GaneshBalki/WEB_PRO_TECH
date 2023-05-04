@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title></title>
+<script>
+ function f1()
+  {
+       let element=document.getElementById("d1")
+
+       element.innerText="hello this IET"
+   }
+   function f2()
+   {
+       let element=document.getElementById("d1")
+       element.innerText=""
+   }
+   function f3()
+   {
+       let element=document.getElementById("d1")
+       element.innerHTML="<b><i><u>Hii my name is bold<u><i><b>"
+   }
+</script>
+
+    </head>
+
+    <body>
+        <div id="d1">
+      
+        </div>
+        <button onclick="f1()">click here</button>
+        <button onclick="f2()">clear</button>
+        <button onclick="f3()">BoldText</button>
+    </body>
+</html>
