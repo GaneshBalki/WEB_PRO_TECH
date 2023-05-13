@@ -1,0 +1,10 @@
+import Product from "./Product.js";
+let obj1=new Product("CPU",8000,"HP")
+let obj2=new Product("Monitor",10000,"Lenovo")
+let obj3=new Product("Keyboard",500,"Intex")
+obj1.show()
+console.log(obj1)
+obj2.show()
+console.log(obj2)
+obj3.show()
+console.log(obj3)
