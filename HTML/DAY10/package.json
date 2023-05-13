@@ -1,14 +1,14 @@
 {
-  "name": "mynodeproject",
+  "name": "day10",
   "version": "1.0.0",
-  "description": "this is a first node project",
-  "main": "index.js",
+  "description": "",
+  "main": "hw1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
   "type": "module",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
   }
