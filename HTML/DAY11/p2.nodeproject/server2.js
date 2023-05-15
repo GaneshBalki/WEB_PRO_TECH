@@ -5,29 +5,32 @@ app.set('view engine','hbs')
 import bodyParser from 'body-parser'
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get('/calculator',(req,res)=>{
-    var sum=0 
-let n1=req.query.num1
-let n2=req.query.num2
-let n3=req.query.num3
-
-let r
-switch (n3) {
-    case 'sub':
-         r= parseInt(n1)-parseInt(n2)
-         res.render("calc",{result:r})
-        break;
-    case 'sum':
-        r= parseInt(n1)+parseInt(n2)
-        res.render("calc",{result:r})
-         break;
-    default:
-        break;
-}
-
-
+app.get('/',(req,res)=>{
+    res.send("Helllo ky chalu ahe")
 })
-
-app.listen(3501,()=>{
-    console.log("Server is running on port 3500")
+app.get('/calci', (req, res) => {
+    const { num1 = 0, num2 = 0, num3 = 'sum' } = req.query;
+  
+    // Check if num1 and num2 are valid numbers
+    if (isNaN(num1) || isNaN(num2)) {
+      return res.send('Invalid input');
+    }
+  
+    let result = 0;
+    switch (num3) {
+      case 'sub':
+        result = parseInt(num1) - parseInt(num2);
+        break;
+      case 'sum':
+        result = parseInt(num1) + parseInt(num2);
+        break;
+      default:
+        return res.send('Invalid input');
+    }
+  
+    res.render('calc', { result });
+  });
+  
+app.listen(1317,()=>{
+    console.log("Server is running on port 1317")
 })

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function array(size)
+        {
+            var arr=[];
+            for (i = 0; i <= size; i++)
+            {
+                ele = prompt("Enter " + i + " element");
+                //val = alert(ele);
+                arr.push(parseInt(ele));
+            }
+            var max = arr.reduce(function (acc, v) { return acc > v ? acc : v });
+            var min = arr.reduce(function (acc, v) { return acc < v ? acc : v });
+            var sum = arr.reduce(function (acc, v) { return acc + v });
+            var avg = arr.reduce(function (acc, v) { return acc + v });
+            avg = avg / (arr.length);
+            document.write("The max element in the array is: " + max);
+            document.write("<br/>");
+            document.write("The min element in the array is: " + min);
+            document.write("<br/>");
+            document.write("The sum of the elements in the array is: " + sum);
+            document.write("<br/>");
+            document.write("The avg of the elements in the array is: " + avg);
+            document.write("<br/>");
+            for (i in arr) {
+                document.write("<br/>" + arr[i]);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button value="Array" onclick="array(4)">
+        Enter an Array
+    </button>
+</body>
+</html>

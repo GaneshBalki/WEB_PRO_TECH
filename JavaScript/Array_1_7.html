@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function array(size)
+        {
+            var arr=[];
+            for (i = 0; i <= size; i++)
+            {
+                ele = prompt("Enter " + i + " element");
+                arr.push(ele);
+            }
+            function prime(num)
+            {
+                var flag = true;
+                for (j = 2; j < num; j++)
+                {
+                    if (num % j == 0)
+                    {
+                        flag = false;
+                    }
+                }
+            }
+
+            var everyprime = arr.every(prime);
+            document.write("All elements in the array are prime :" + everyprime);
+            
+            for (i in arr) {
+                document.write("<br/>" + arr[i]);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button value="Array" onclick="array(4)">
+        Enter an Array
+    </button>
+</body>
+</html>

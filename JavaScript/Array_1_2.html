@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function array()
+        {   
+            size=prompt("Enter Size of array")
+            var arr=[];
+            for (i = 0; i <= size; i++)
+            {
+                ele = prompt("Enter " + i + " element");
+                //val = alert(ele);
+                arr.push(ele);
+            }
+
+            function mysort(a, b) {
+                return a - b;
+            }
+            arr.sort(mysort);
+            //arr.sort((a, b) => a - b);
+            //arr.sort(function (a, b) { return a - b; });
+            
+            for (i in arr) {
+                document.write("<br/>" + arr[i]);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button value="Array" onclick="array()">
+        Enter an Array
+    </button>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function array(size)
+        {
+            var arr=[];
+            for (i = 0; i <= size; i++)
+            {
+                ele = prompt("Enter " + i + " element");
+                arr.push(ele);
+            }
+            var even = arr.filter(function (v) { return v % 2 == 0 });
+            var odd = arr.filter(function (v) { return v % 2 == 1 });
+
+            document.write("Even numbers in the array are :" + even);
+            document.write("<br/>")
+            document.write("Odd numbers in the array are :" + odd);
+            
+        }
+    </script>
+</head>
+<body>
+    <button value="Array" onclick="array(4)">
+        Enter an Array
+    </button>
+</body>
+</html>

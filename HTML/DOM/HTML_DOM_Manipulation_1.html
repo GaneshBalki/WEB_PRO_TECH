@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script>
+        function show() {
+            //getting all li elements
+            var liarr = document.getElementsByTagName("li");
+            for (i = 0; i < liarr.length; i++) {
+                var imgnode = document.createElement("img");
+                imgnode.setAttribute("src", liarr[i].firstChild.nodeValue + ".jpg");
+                imgnode.setAttribute("width", "100");
+                imgnode.setAttribute("height", "100");
+                liarr[i].removeChild(liarr[i].firstChild);
+                liarr[i].appendChild(imgnode);
+                //liarr[i].reaplceChild(imgnode , liarr[i].firstChild )
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center">HTML DOM</h1>
+
+    <div id="box" style="font-size:x-large">
+        <ul>
+            <li>desktop</li>
+            <li>mycomputer</li>
+            <li>folder</li>
+            <li>browser</li>
+            <li>worddocument</li>
+        </ul>
+    </div>
+
+    <button onclick="show()"> Show </button>
+</body>
+</html>

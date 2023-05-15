@@ -3,47 +3,48 @@ let app=express()
 app.set('views',"./views")
 app.set('view engine','hbs')
 
+import bodyParser from 'body-parser'
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get("/",(req,res)=>{
-    res.send("WELCOME TO INDIA")
+    res.render("index")
 })
 
 app.get("/login",(req,res)=>{
-    res.sendFile("C:\\CDAC\\HTML\\DAY11\\p2.nodeproject\\login.html")
+    res.render("login.hbs")
 })
 
-import bodyParser from 'body-parser'
-app.use(bodyParser.urlencoded({ extended: true }))
+
 var arr=[{"user":"Ganesh","pass":1234},{"user":"Shamim","pass":1234}]
-app.get("/home",(req,res)=>{
-    let user=req.query.uname
-    let pwd=req.query.password
+app.post("/home",(req,res)=>{
+    let user=req.body.uname
+    let pwd=req.body.password
  
     let a=arr.find(e=> e.user==user && e.pass==pwd)
       if(a != undefined)
       {
         res.render("welcom",{username:user})
       }else{
-        res.sendFile("C:\\CDAC\\HTML\\DAY11\\p2.nodeproject\\login.html")}
+        res.render("login.hbs")}
       
 })
 
 
 app.get("/createAc",(req,res)=>{
-    res.sendFile("C:\\CDAC\\HTML\\DAY11\\p2.nodeproject\\createAC.html")
+    res.render("createAC.hbs")
 })
 
-app.get("/create",(req,res)=>{
-    let user=req.query.cname
-    let pwd=req.query.cpassword
+app.post("/create",(req,res)=>{
+    let user=req.body.cname
+    let pwd=req.body.cpassword
      
     arr.push({"user":user,"pass":pwd})
-    res.sendFile("C:\\CDAC\\HTML\\DAY11\\p2.nodeproject\\login.html")
+    res.render("login.hbs")
    // res.json(arr)
       
 })
 app.get('/all',(req,res)=>{
-    res.send(arr)
+    res.json(arr)
 })
 
 app.listen(5200,()=>{

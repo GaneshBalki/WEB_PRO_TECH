@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function chbackground()
+        {
+            var chback = document.querySelectorAll("[type='text']");
+            for (i = 0; i < chback.length; i++)
+            {
+                chback[i].style.backgroundColor = "Purple";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    <button  onclick="chbackground()">Click on</button>
+</body>
+</html>

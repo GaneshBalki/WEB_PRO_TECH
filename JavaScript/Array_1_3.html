@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function array(size)
+        {
+            var arr=[];
+            for (i = 0; i <= size; i++)
+            {
+                ele = prompt("Enter " + i + " element");
+                //val = alert(ele);
+                arr.push(ele);
+                document.write("<li>" + ele + "</li>");
+            }
+            // arr.forEach(myiter);
+            // function myiter(v)
+            // {
+            //     document.write("<li>" + v + "</li>");
+            // }
+            //arr.forEach(function (v) { document.write("<li>" + v + "</li>"); });
+            //arr.forEach((v) => { document.write("<li>" + v + "</li>"); });
+         
+        }
+    </script>
+</head>
+<body>
+    <button value="Array" onclick="array(4)">
+        Enter an Array
+    </button>
+</body>
+</html>

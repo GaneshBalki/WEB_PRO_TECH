@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function getInfo() {
+            var str = "<table border=1>";
+            var bodychild = document.body.childNodes;
+            for (i = 0; i < bodychild.length; i++) {
+                if (bodychild[i].nodeType == 1) //for only element nodes 
+                {
+                    if (bodychild[i].firstChild != null) //only if element has first child
+                    {
+                        //alert(divchild[i].nodeName + " : " + divchild[i].firstChild.nodeValue);
+                        str += "<tr>";
+                        str += "<td>" + bodychild[i].nodeName + "</td>";
+                        str += "<td>" + bodychild[i].firstChild.nodeValue + "</td>";
+                        str += "</tr>";
+                    }
+                }
+            }
+            str += "</table>";
+            document.getElementById("info").innerHTML = str;
+        }
+    </script>
+</head>
+<body>
+    <p>KnowIITians's Members</p>
+    <p>Amit Rajendra Kamble</p>
+    <p>Harish Bankat Ghadge</p>
+    <p>Vaibhav Shinde(Shinde Sarkar)</p>
+    <p>Asif Shaikh(Indian shaikh)</p>
+    <p>Pranita Shinde(Shinde group member)</p>
+    <p>Shrushti Bhilare(Student of IIT,Narhe)</p>
+    <button id="button" value="Display Info" onclick="getInfo()">Display Info</button>
+    <div id="info"></div>
+</body>
+</html>
