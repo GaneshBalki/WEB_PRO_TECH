@@ -1,0 +1,24 @@
+
+<html >
+  <head>
+   <script>
+    function handler1()
+    {
+        const xhttp=new XMLHttpRequest();
+        xhttp.onload=function(){
+            document.getElementById("p1").innerHTML=xhttp.response
+        }
+      
+      xhttp.open("GET","about");
+      xhttp.send();
+    }
+   </script>
+  </head>
+<body>
+    {{!-- <input type="button" onClick="handler1()"/> --}}
+    <button onclick="handler1()">This is Button</button>
+    <p id="p1"></p>
+    <p2 id="p2"></p2>
+</body>
+
+</html>
