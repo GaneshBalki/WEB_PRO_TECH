@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script>
+            function verify(){
+                let xhttp= new XMLHttpRequest();
+                let objJson = {usrname:document.getElementById("usr").value,
+                password:document.getElementById("pwd").value}
+                xhttp.onload = ()=>{
+                    document.getElementById("div1").innerHTML=xhttp.response
+                }
+                xhttp.open("POST","verifyLogin")
+                xhttp.setRequestHeader("Content-Type", "application/json");
+                xhttp.send(JSON.stringify(objJson))
+            }
+        </script>
+    </head>
+    <body>
+        <div id="div1">
+            Username: <input type="text" id="usr"/>
+            Password: <input type="password" id="pwd"/>
+            <button id="btn1" onclick="verify()">Login</button>
+        </div>
+    </body>
+</html>
