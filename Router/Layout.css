@@ -1,0 +1,28 @@
+
+.hi {
+    color: #FFF;
+    border: 2px solid rgb(100, 243, 231);
+    border-radius: 0px;
+    padding: 7px 14px;
+    display: inline-block;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 mediumaquamarine;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+  }
+  .hi{
+    text-decoration: none;
+    font-size:20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+}
+ .hi:hover {
+    box-shadow: inset 400px 0 0 0 mediumaquamarine;
+  }
+/* div{
+    background-color: black;
+} */
