@@ -1,32 +1,30 @@
-import { Component } from "react";
+import React,{ Component } from "react";
 
 
 export default class Table extends Component{
   
     constructor(props){
-        super()
-        this.n1=props.num
-        this.setState={num:1}
-       
+        super(props)
+        
+        this.state={facto:1,n1:props.num}
+        
     }
     
-   table(){
+   f1(){
+     
       let fact=1
-      for(let i=1;i<=this.n1;i++){
+      for(let i=1;i<=this.state.n1;i++){
          fact=fact*i
       }
-      this.setState({num:fact})
+
+      this.setState({facto:fact})
     }
     render(){
         return(
             <div>
-                <button onClick={this.table}>CLick</button>
-                is is {this.state.num}
+               <button onClick={this.f1}>Cal</button>
+                is is {this.state.facto}
             </div>
         )
     }
-
-
-
-    
 }
